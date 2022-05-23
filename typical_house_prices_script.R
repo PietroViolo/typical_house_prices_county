@@ -90,8 +90,8 @@ png("typical_house_prices.png", res = 300, width = 4400, height = 2600)
 ggplot(data = household_data,
        aes(x = long, y = lat, group = group, fill = years_to_buy)) +
   geom_polygon() +
-  ggtitle("Number of years of the median salary to equate to the value of a typical home, for US counties in 2022",
-          subtitle = "The Zillow Home Value Index (ZHVI) is a smoothed, seasonally adjusted measure of the typical home value and market changes across a given region and housing type. \nIt reflects the typical value for homes in the 35th to 65th percentile range. \n The measure is then divided by the county's median salary to obtain the number of salaried years required to equate the home value.")+
+  ggtitle("Number of years of the median household income to equate to the value of a typical home, for US counties in 2022",
+          subtitle = "The Zillow Home Value Index (ZHVI) is a smoothed, seasonally adjusted measure of the typical home value and market changes across a given region and housing type. \nIt reflects the typical value for homes in the 35th to 65th percentile range. \n The measure is then divided by the county's median household income to obtain the number of years required to equate the home value.")+
   coord_map(projection = "albers", lat = 45, lat1 = 55) +
   theme(legend.position="bottom",
         axis.line=element_blank(),
@@ -107,7 +107,7 @@ ggplot(data = household_data,
         plot.subtitle = element_text(size= 10, hjust=0.5, color = "#4e4d47", margin = margin(b = -0.1, t = 0.4, l = 2, unit = "cm")))+
   scale_fill_manual( 
     values=my_palette, 
-    name="Number of years of median salary", 
+    name="Number of years of median household income", 
     guide = guide_legend( keyheight = unit(3, units = "mm"), keywidth=unit(8, units = "mm"), label.position = "bottom", title.position = 'top', nrow=1),
     limits = c("[0, 2[","[2, 4[", "[4, 6[",
                "[6, 8[", "[8, 10[", "[10, 15[", "15+"),
