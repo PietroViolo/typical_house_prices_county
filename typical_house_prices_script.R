@@ -110,10 +110,11 @@ ggplot(data = household_data,
     name="Number of years of median household income", 
     guide = guide_legend( keyheight = unit(3, units = "mm"), keywidth=unit(8, units = "mm"), label.position = "bottom", title.position = 'top', nrow=1),
     limits = c("[0, 2[","[2, 4[", "[4, 6[",
-               "[6, 8[", "[8, 10[", "[10, 15[", "15+"),
+               "[6, 8[", "[8, 10[", "[10, 15[", "15 +"),
     na.value = "grey35"
     
 
   )
+x<-household_data %>% filter(years_to_buy == "15 +")
 
 dev.off()
